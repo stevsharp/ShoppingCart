@@ -1,0 +1,27 @@
+﻿@inherits LayoutComponentBase
+@using ShoppingCart.Pages
+@using ShoppingCart.Services
+@inject ICartService cartService
+@implements IDisposable
+
+<div class="alert alert-primary">
+    <h2>Cart Total: $@cartService.Total</h2>
+    <Summary />
+</div>
+
+
+
+<main class="px-4">
+    @Body
+</main>
+
+@code {
+    protected override void OnInitialized()
+    {
+
+    }
+    public void Dispose()
+    {
+
+    }
+}
