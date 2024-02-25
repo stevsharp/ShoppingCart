@@ -12,8 +12,8 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddScoped<ICartService, CartService>();
 
-builder.Services.AddSingleton<CounterStateStore>();
-builder.Services.AddSingleton<TotalStateStore>();
+builder.Services.AddSingleton<ICounterStateStore,CounterStateStore>();
+builder.Services.AddSingleton<IPriceStateStore,TotalStateStore>();
 
 //builder.Services.AddSingleton(typeof(ICounterStateStore<>),typeof(CounterStateStore<CounterState>));
 //builder.Services.AddTransient(typeof(IDatabaseService<>), typeof(DatabaseService<>));

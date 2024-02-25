@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 
+using ShoppingCart.Actions;
+
 namespace ShoppingCart.Pages
 {
     public partial class CounterSummary
@@ -8,7 +10,7 @@ namespace ShoppingCart.Pages
         private IDisposable? subscription;
 
         [Inject]
-        public CounterStateStore counterStateStoreActions { get; set; }
+        public ICounterStateStore counterStateStoreActions { get; set; }
 
         protected int currentCount = 0;
 

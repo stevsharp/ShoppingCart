@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 
+using ShoppingCart.Actions;
+
 namespace ShoppingCart.Pages
 {
     public partial class Total
@@ -7,7 +9,7 @@ namespace ShoppingCart.Pages
         private IDisposable? subscription;
 
         [Inject]
-        public TotalStateStore totalStateStore { get; set; }
+        public IPriceStateStore totalStateStore { get; set; }
 
         protected decimal total = 0;
 

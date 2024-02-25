@@ -9,10 +9,10 @@ namespace ShoppingCart.Services
 
         private int total;
 
-        protected readonly CounterStateStore _counterStateStoreActions;
+        protected readonly ICounterStateStore _counterStateStoreActions;
 
-        protected readonly TotalStateStore _totalStateStore;
-        public CartService(CounterStateStore counterStateStoreActions, TotalStateStore totalStateStore) 
+        protected readonly IPriceStateStore _totalStateStore;
+        public CartService(ICounterStateStore counterStateStoreActions, IPriceStateStore totalStateStore) 
         { 
             this._counterStateStoreActions = counterStateStoreActions; 
 
