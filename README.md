@@ -10,4 +10,6 @@ This project serves as a shopping cart application, leveraging the power of Reac
 - [State-based Event Handling]: Utilizes state events for managing application state
 - Blazor Component 
 
-<img src="../images/Screenshot 2024-02-25 210935.png" alt="Alt text">
+
+
+<img src="../../images/Screenshot 2024-02-25 210935.png" alt="Alt text">
