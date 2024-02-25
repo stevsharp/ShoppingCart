@@ -1,4 +1,5 @@
-﻿using ShoppingCart.Models;
+﻿using ShoppingCart.Actions;
+using ShoppingCart.Models;
 
 namespace ShoppingCart.Services
 {
@@ -8,8 +9,15 @@ namespace ShoppingCart.Services
 
         private int total;
 
-        protected readonly CounterStateStore counterStateStoreActions;
-        public CartService(CounterStateStore counterStateStoreActions) => this.counterStateStoreActions = counterStateStoreActions;
+        protected readonly CounterStateStore _counterStateStoreActions;
+
+        protected readonly TotalStateStore _totalStateStore;
+        public CartService(CounterStateStore counterStateStoreActions, TotalStateStore totalStateStore) 
+        { 
+            this._counterStateStoreActions = counterStateStoreActions; 
+
+            this._totalStateStore = totalStateStore;
+        }
 
         public IList<Product> Cart { get => cart; }
         public int Total{ get => total; }
@@ -20,7 +28,9 @@ namespace ShoppingCart.Services
 
             total += product.Price;
 
-            counterStateStoreActions.Increment();
+            _totalStateStore.Increment(total);
+
+            _counterStateStoreActions.Increment();
 
         }
         public void DeleteProduct(Product product)
@@ -29,7 +39,9 @@ namespace ShoppingCart.Services
 
             total -= product.Price;
 
-            counterStateStoreActions.Decrement();
+            _totalStateStore.Increment(total);
+
+            _counterStateStoreActions.Decrement();
         }
     }
 }

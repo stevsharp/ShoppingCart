@@ -2,7 +2,7 @@
 
 namespace ShoppingCart.Pages
 {
-    public partial class Summary
+    public partial class CounterSummary
     {
 
         private IDisposable? subscription;

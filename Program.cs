@@ -13,6 +13,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddScoped<ICartService, CartService>();
 
 builder.Services.AddSingleton<CounterStateStore>();
+builder.Services.AddSingleton<TotalStateStore>();
 
 //builder.Services.AddSingleton(typeof(ICounterStateStore<>),typeof(CounterStateStore<CounterState>));
 //builder.Services.AddTransient(typeof(IDatabaseService<>), typeof(DatabaseService<>));
