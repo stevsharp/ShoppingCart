@@ -9,3 +9,4 @@ This project serves as a shopping cart application, leveraging the power of Reac
 - [Reactive Extensions (Rx)](https://rxjs.dev/): A library for composing asynchronous and event-based programs using observable sequences
 - [State-based Event Handling]: Utilizes state events for managing application state
 
+<img src="images/Screenshot 2024-02-25 210935.png" alt="Alt text">
